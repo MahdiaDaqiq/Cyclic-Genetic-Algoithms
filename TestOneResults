@@ -1,0 +1,255 @@
+
+import turtle as t
+import math
+from random import *
+t.speed(10)
+
+t.degrees(360)
+window=t.Screen()
+window.setup(600,600)
+
+t.setpos(0.0, 0.0)
+t.seth(0.0)
+goalPoss = []
+goal = [
+    goalPoss.append(t.pos()),
+    goalPoss.append(t.heading()),
+    t.forward(60),
+    goalPoss.append(t.pos()),
+    t.left(90),
+    goalPoss.append(t.heading()),
+    t.forward(60),
+    goalPoss.append(t.pos()),
+    t.left(90),
+    goalPoss.append(t.heading()),
+    t.forward(60),
+    goalPoss.append(t.pos()),
+    t.left(90),
+    goalPoss.append(t.heading()),
+    t.forward(60),
+    goalPoss.append(t.pos()),
+    t.left(90),
+    goalPoss.append(t.heading())
+]
+t.setpos(0.0, 0.0)
+t.seth(0.0)
+
+
+chrom = [[14, 2], [12, 9], [7, 2], [14, 3], [8, 3], [10, 4], [14, 5], [9, 9]]
+
+
+
+
+def robotgo(chrom):
+  robotPoss = []
+  robotPoss.append(t.pos())
+  robotPoss.append(t.heading())
+  for sets in chrom:
+    #       T     F     H
+  #[[0, [4.20, 0.18, 29.90]], 
+    if sets[0] == 0:
+      for n in range(sets[1]):
+        t.forward(0.18)
+        t.left(90)
+        t.forward(4.20)
+        t.right(90)
+        t.right(29.90)
+        robotPoss.append(t.pos())
+        robotPoss.append(t.heading())
+
+  #[1, [5.22, 2.57, 21.17]], 
+    if sets[0] == 1:
+      for n in range(sets[1]):
+        t.forward(2.57)
+        t.left(90)
+        t.forward(5.22)
+        t.right(90)
+        t.right(21.17)
+        robotPoss.append(t.pos())
+        robotPoss.append(t.heading())
+
+  #	[2, [5.19, 2.96, 11.68]], 
+
+    if sets[0] == 2:
+      for n in range(sets[1]):
+        t.forward(2.96)
+        t.left(90)
+        t.forward(5.19)
+        t.right(90)
+        t.right(11.68)
+        robotPoss.append(t.pos())
+        robotPoss.append(t.heading())
+
+  #	[3, [6.18, 3.05, 6.15]],
+    if sets[0] == 3:
+      for n in range(sets[1]):
+        t.forward(3.05)
+        t.left(90)
+        t.forward(6.18)
+        t.right(90)
+        t.right(6.15)
+        robotPoss.append(t.pos())
+        robotPoss.append(t.heading())
+
+  #	[4, [5.58, 5.13, 3.79]],
+    if sets[0] == 4:
+      for n in range(sets[1]):
+        t.forward(5.13)
+        t.left(90)
+        t.forward(5.58)
+        t.right(90)
+        t.right(3.79)
+        robotPoss.append(t.pos())
+        robotPoss.append(t.heading())
+
+  #	[5, [4.36, 7.20, 2.86]], 
+    if sets[0] == 5:
+      for n in range(sets[1]):
+        t.forward(7.20)
+        t.left(90)
+        t.forward(4.36)
+        t.right(90)
+        t.right(2.86)
+        robotPoss.append(t.pos())
+        robotPoss.append(t.heading())
+      
+    
+    #	[6, [3.18, 8.10, 1.94]],
+    if sets[0] == 6:
+      for n in range(sets[1]):
+        t.forward(8.10)
+        t.left(90)
+        t.forward(3.18)
+        t.right(90)
+        t.right(1.94)
+        robotPoss.append(t.pos())
+        robotPoss.append(t.heading())
+      
+    #	[7, [0.78, 9.37, 1.18]],
+    if sets[0] == 7:
+      for n in range(sets[1]):
+        t.forward(9.37)
+        t.left(90)
+        t.forward(0.78)
+        t.right(90)
+        t.right(1.18)
+        robotPoss.append(t.pos())
+        robotPoss.append(t.heading())
+
+  #	[8, [0.78, 9.37, 1.18]], 
+    if sets[0] == 8:
+      for n in range(sets[1]):
+        t.forward(9.37)
+        t.left(90)
+        t.forward(0.78)
+        t.right(90)
+        t.right(1.18)
+        robotPoss.append(t.pos())
+        robotPoss.append(t.heading())
+        
+  #	[9, [-1.68, 7.69, -1.23]],
+    if sets[0] == 9:
+      for n in range(sets[1]):
+        t.forward(7.69)
+        t.left(90)
+        t.forward(-1.68)
+        t.right(90)
+        t.right(-1.23)
+        robotPoss.append(t.pos())
+        robotPoss.append(t.heading())
+
+  #	[10, [-2.75, 7.31, -1.71]], 
+    if sets[0] == 10:
+      for n in range(sets[1]):
+        t.forward(7.31)
+        t.left(90)
+        t.forward(-2.75)
+        t.right(90)
+        t.right(-1.71)
+        robotPoss.append(t.pos())
+        robotPoss.append(t.heading())
+        
+  #	[11, [-4.52, 5.78, -3.42]], 
+    if sets[0] == 11:
+      for n in range(sets[1]):
+        t.forward(5.78)
+        t.left(90)
+        t.forward(-4.52)
+        t.right(90)
+        t.right(-3.42)
+        robotPoss.append(t.pos())
+        robotPoss.append(t.heading())
+
+  #	[12, [-4.66, 4.81, -6.26]],   
+    if sets[0] == 12:
+      for n in range(sets[1]):
+        t.forward(4.81)
+        t.left(90)
+        t.forward(-4.66)
+        t.right(90)
+        t.right(-6.26)
+        robotPoss.append(t.pos())
+        robotPoss.append(t.heading())
+
+  #	[13, [-4.90, 3.64, -10.48]], 
+    if sets[0] == 13:
+      for n in range(sets[1]):
+        t.forward(3.64)
+        t.left(90)
+        t.forward(-4.90)
+        t.right(90)
+        t.right(-10.48)
+        robotPoss.append(t.pos())
+        robotPoss.append(t.heading())
+        
+  #	[14, [-5.05, 2.25, -22.47]],
+    if sets[0] == 14:
+      for n in range(sets[1]):
+        t.forward(2.25)
+        t.left(90)
+        t.forward(-5.05)
+        t.right(90)
+        t.right(-22.47)
+        robotPoss.append(t.pos())
+        robotPoss.append(t.heading())
+
+  #	[15, [-4.83, 0.04, -29.71]]] 
+    if sets[0] == 15:
+      for n in range(sets[1]):
+        t.forward(0.04)
+        t.left(90)
+        t.forward(-4.83)
+        t.right(90)
+        t.right(-29.71)
+        robotPoss.append(t.pos())
+        robotPoss.append(t.heading())
+  return robotPoss
+
+
+def fitnessfunc(robotPoss, chrom, XorYerr, limit, line, headturn):
+  if len(chrom) >= 2:
+    #print(robotPoss)
+    yerr = 0 # y err
+    herr = 0 #heading err
+    lerr = 0 # how close are you to 60
+    for num in range(len(robotPoss)):
+      if isinstance(robotPoss[num], float): #it is heading
+        None
+      else:
+        if XorYerr == 1:
+          l = 0
+        else:
+          l = 1 #cheacks if y is the error then we check how close x is to th target and vis verca
+        lerr = robotPoss[-2][l] - limit #checks how close we are to 60 or 0
+        lerr = lerr * 3
+        herr = abs(robotPoss[-1]) - headturn #heading err
+        
+        yerr += abs(robotPoss[num][XorYerr]) - line #find the x or y error
+    err = yerr + abs(lerr) + abs(herr)
+    fit = 1000/(err+1)
+  return fit
+
+
+print(robotgo(chrom))
+
+
